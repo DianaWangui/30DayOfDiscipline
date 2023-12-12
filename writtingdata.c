@@ -8,8 +8,8 @@ int main(void)
   fptr = fopen("writing.txt", "w"); /* open file in writing mode if no file, create new file*/
   if (fptr == NULL)                 /* check if the file is opened successfully or not */
   {
-    perror("file not found");
-    exit(1);
+    perror("file not found\n");
+    exit(EXIT_FAILURE);
   }
   printf("Enter your text here: ");
   if (fgets(ch, sizeof(ch), stdin) != NULL) /* reading the user input from stdin*/
@@ -18,8 +18,8 @@ int main(void)
   }
   else
   {
-    perror("Error reading input");
-    exit(2);
+    perror("Error reading input\n");
+    exit(EXIT_FAILURE);
   }
   /* This will be printed when the program is successfull*/
   printf("\nYour entered text has been written to testfile.txt\n");
