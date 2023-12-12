@@ -23,6 +23,7 @@ int main(void)
   }
   /* This will be printed when the program is successfull*/
   printf("\nYour entered text has been written to testfile.txt\n");
+  /* Closing the opened file */
   fclose(fptr);
   return (0);
 }
