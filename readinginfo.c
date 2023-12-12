@@ -4,7 +4,7 @@ int main(void)
 {
   char *data;
   FILE *ptr;
-  size_t size;
+
   ptr = fopen("writing.txt", "r");
   if (ptr == NULL)
   {
@@ -18,11 +18,11 @@ int main(void)
     perror("Failed to allocate memeory\n");
     exit(EXIT_FAILURE);
   }
-  if (fgets(data, 20, ptr) == NULL) /* Reading all characters using fgets() upto to the size allocated*/
+  if (fgets(data, 20, ptr) == NULL) /* Reading all characters using fgets() upto to the size allocated, if null print error*/
   {
     perror("Failed to read data\n");
   }
-  printf("DATA READ: %s", data); /* Printing the data read to the stdout*/
+  printf("DATA READ: %s", data); /* Printing the data read to the stdout after success reading using fgets()*/
   free(data);                    /* free the allocated memory after use*/
   fclose(ptr);                   /* close the file*/
   return (0);
