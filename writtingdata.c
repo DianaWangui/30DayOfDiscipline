@@ -45,7 +45,7 @@ int main(void)
   }
 
   printf("Enter your integer here: ");
-  if (fscanf(stdin, "%d", &number) != 1) /* read an integer value from user and store it in variable i */
+  if (fscanf(stdin, "%d", &number) != 1) /* read an integer value from user and store it in variable number*/
   {
     printf("Invalid Input\n");
     exit(EXIT_FAILURE);
