@@ -18,11 +18,13 @@ int main(void)
 
   /* using a file pointer to open our file for reading operation */
   fptr = fopen("writing.txt", "r");
+
   if (fptr == NULL)
   {
     perror("Error! opening file writing.txt\n");
     exit(1);
   }
+
   /* using the getline function to allocate memory for the file being read*/
   while (read = getline(&str, &len, fptr) != -1)
   {
@@ -30,13 +32,16 @@ int main(void)
     /* checking number of characters read */
     read_char += read;
   }
-  /* %zu is the specifier to print charater read using getline()*/
+
+  /* %zu is the specifier to print charater read using getline*/
   printf("\n%zu", read_char);
+
   /* using ferror() to check whether an error has occurred on when reading data in the file*/
   if (ferror(fptr))
   {
     perror("Error! Reading file writing.txt\n");
   }
+
   /* free the memeory allocated by getline*/
   free(str);
   /* closing the file*/
