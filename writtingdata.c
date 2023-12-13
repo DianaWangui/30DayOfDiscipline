@@ -21,7 +21,7 @@ int main(void)
     perror("Error reading input");
     exit(2);
   }
-  // fputs(ch, fptr);   /* write into the file what user has entered */
+  /* fputs(ch, fptr); // write into the file what user has entered */
   printf("\nYour entered text has been written to testfile.txt\n");
   fclose(fptr);
   return (0);
