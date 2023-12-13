@@ -34,6 +34,7 @@ int main(void)
   }
 
   /* %zu is the specifier to print charater read using getline*/
+  /* still not sure here...*/
   printf("\n%zu", read_char);
 
   /* using ferror() to check whether an error has occurred on when reading data in the file*/
