@@ -56,12 +56,13 @@ int main(void)
   fclose(fptr);
   fclose(temp);
 
-  /* Removing the temp file */
+  /* Removing the original file */
   remove("writing.txt");
 
+  /* rename the temp file back to original file*/
   rename("reading.txt", "writing.txt");
 
-  /* free the memeory allocated by getline*/
+  /* free the memory allocated by getline*/
   free(str);
   return (0);
 }
