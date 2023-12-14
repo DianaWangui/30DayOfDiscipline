@@ -35,7 +35,7 @@ int main(void)
     perror("Could not open file reading.txt.\n");
   }
   /* using the getline function to allocate memory for the file being read*/
-  while (read = getline(&str, &len, fptr) != -1)
+  while ((read = getline(&str, &len, fptr)) != -1)
   {
     for (i = 0; i < read; i++)
     {
