@@ -1,5 +1,1 @@
-The getline function is a C library function 
-used for reading an entire line from a stream, 
-such as a file stream or standard input (stdin). 
-It dynamically allocates memory for the line it reads, 
-making it suitable for reading lines of arbitrary length.
+D

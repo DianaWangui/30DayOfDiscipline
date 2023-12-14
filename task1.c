@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <sys/types.h>
+
 /**
  * main- a main function for reading data from a file
  * @fptr:  pointer to the file being read
@@ -10,11 +13,12 @@
  */
 int main(void)
 {
-  FILE *fptr;
+  FILE *fptr, *temp;
   char *str = NULL;
   size_t read;
   size_t len = 0;
   size_t read_char = 0;
+  ssize_t i;
 
   /* using a file pointer to open our file for reading operation */
   fptr = fopen("writing.txt", "r");
@@ -25,27 +29,39 @@ int main(void)
     exit(1);
   }
 
+  temp = fopen("reading.txt", "w");
+  if (temp == NULL)
+  {
+    perror("Could not open file reading.txt.\n");
+  }
   /* using the getline function to allocate memory for the file being read*/
   while (read = getline(&str, &len, fptr) != -1)
   {
-    printf("%s", str);
-    /* checking number of characters read */
-    read_char += read;
-  }
+    for (i = 0; i < read; i++)
+    {
+      /* Manipulating the data in the file char by char to upper case using toupper()*/
+      str[i] = toupper(str[i]);
+    }
 
-  /* %zu is the specifier to print charater read using getline*/
-  /* still not sure here...*/
-  printf("\n%zu", read_char);
+    /*Write the manipulated line back to the file*/
+    fwrite(str, 1, read, temp);
+  }
 
   /* using ferror() to check whether an error has occurred on when reading data in the file*/
   if (ferror(fptr))
   {
     perror("Error! Reading file writing.txt\n");
   }
+  /* closing the file*/
+  fclose(fptr);
+  fclose(temp);
+
+  /* Removing the temp file */
+  remove("writing.txt");
+
+  rename("reading.txt", "writing.txt");
 
   /* free the memeory allocated by getline*/
   free(str);
-  /* closing the file*/
-  fclose(fptr);
   return (0);
 }
