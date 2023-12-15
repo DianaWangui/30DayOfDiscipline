@@ -17,18 +17,20 @@ int main(void)
   }
   /* Allocating memory dynamically for the buffer to store the data read*/
   data = (char *)malloc(20);
-  if (data == NULL) /* checking condition where malloc fails and exit*/
+  if (data == NULL)
   {
     perror("Failed to allocate memeory\n");
     exit(EXIT_FAILURE);
   }
-  if (fgets(data, 20, ptr) == NULL) /* Reading all characters using fgets() upto to the size allocated, if null print error*/
+  /* Reading all characters using fgets() upto to the size allocated, if null print error*/
+  if (fgets(data, 20, ptr) == NULL)
   {
     perror("Failed to read data\n");
     exit(EXIT_FAILURE);
   }
-  printf("DATA READ: %s", data); /* Printing the data read to the stdout after success reading using fgets()*/
-  free(data);                    /* free the allocated memory after use*/
-  fclose(ptr);                   /* close the file*/
+  /* Printing the data read to the stdout after success reading using fgets()*/
+  printf("DATA READ: %s", data);
+  free(data);
+  fclose(ptr);
   return (0);
 }
