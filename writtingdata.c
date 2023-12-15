@@ -13,9 +13,9 @@
  */
 int main(void)
 {
-  FILE *fptr, *aptr; /* A pointer to the file we are writing to*/
-  char ch[20];       /* Character array we are reading from user and writing to the file*/
-  int number;        /* integer we are reading from user and writing to the file */
+  FILE *fptr, *appendptr; /* A pointer to the file we are writing to*/
+  char ch[20];            /* Character array we are reading from user and writing to the file*/
+  int number;             /* integer we are reading from user and writing to the file */
 
   fptr = fopen("writing.txt", "w"); /* open file in writing mode if no file, create new file*/
   if (fptr == NULL)                 /* check if the file is opened successfully, if not print error msg and exit */
@@ -37,29 +37,30 @@ int main(void)
   fclose(fptr);
 
   /* Opening file for appending some int value and a string*/
-  aptr = fopen("writing.txt", "a");
-  if (aptr == NULL)
+  appendptr = fopen("writing.txt", "a");
+  if (appendptr == NULL)
   {
     perror("Failed to open the file for appending.\n");
-    return (1);
+    xit(EXIT_FAILURE);
   }
   printf("Enter a line of text: ");
   if (fgets(ch, sizeof(ch), stdin) == NULL)
   {
     perror("NULL");
-    return (-1);
+    exit(EXIT_FAILURE);
   }
   printf("Number: ");
   if (scanf("%d", &number) != 1)
   {
     perror("error: invalid number format\n");
+    exit(EXIT_FAILURE);
   }
   /* Write the entered text followed by a newline character to the file.*/
-  fprintf(aptr, "%s %d\n", ch, number);
+  fprintf(appendptr, "%s %d\n", ch, number);
 
   /* printing out the appended text to the stdout*/
   printf("%s %d\n", ch, number);
   /* Close the file. */
-  fclose(aptr);
+  fclose(appendptr);
   return (0);
 }
