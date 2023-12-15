@@ -13,9 +13,9 @@
  */
 int main(void)
 {
-  FILE *fptr;  /* A pointer to the file we are writing to*/
-  char ch[20]; /* Character array we are reading from user and writing to the file*/
-  int number;  /* integer we are reading from user and writing to the file */
+  FILE *fptr, *aptr; /* A pointer to the file we are writing to*/
+  char ch[20];       /* Character array we are reading from user and writing to the file*/
+  int number;        /* integer we are reading from user and writing to the file */
 
   fptr = fopen("writing.txt", "w"); /* open file in writing mode if no file, create new file*/
   if (fptr == NULL)                 /* check if the file is opened successfully, if not print error msg and exit */
@@ -36,26 +36,30 @@ int main(void)
   printf("\n");
   fclose(fptr);
 
-  /*Lets try to enter int values this will overwite if we open the file with 'r' so lets open with 'a' for append*/
-  fptr = fopen("writing.txt", "a");
-  if (fptr == NULL)
+  /* Opening file for appending some int value and a string*/
+  aptr = fopen("writing.txt", "a");
+  if (aptr == NULL)
   {
-    perror("Failed to open file\n");
-    exit(EXIT_FAILURE);
+    perror("Failed to open the file for appending.\n");
+    return (1);
   }
-  /* fputs(ch, fptr); // write into the file what user has entered */
-
-  printf("Enter your integer here: ");
-  if (fscanf(stdin, "%d", &number) != 1) /* read an integer value from user and store it in variable number*/
+  printf("Enter a line of text: ");
+  if (fgets(ch, sizeof(ch), stdin) == NULL)
   {
-    printf("Invalid Input\n");
-    exit(EXIT_FAILURE);
+    perror("NULL");
+    return (-1);
   }
-  fprintf(fptr, "%d", number);
+  printf("Number: ");
+  if (scanf("%d", &number) != 1)
+  {
+    perror("error: invalid number format\n");
+  }
+  /* Write the entered text followed by a newline character to the file.*/
+  fprintf(aptr, "%s %d\n", ch, number);
 
-  /* This will be printed when the program is successfull*/
-  printf("\nYour entered text has been written to testfile.txt\n");
-  /* Closing the opened file */
-  fclose(fptr);
+  /* printing out the appended text to the stdout*/
+  printf("%s %d\n", ch, number);
+  /* Close the file. */
+  fclose(aptr);
   return (0);
 }

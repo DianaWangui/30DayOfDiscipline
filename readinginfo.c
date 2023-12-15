@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * main- a main function that reads information
+ * from a file and append new information
+ */
 int main(void)
 {
   char *data;
