@@ -1,0 +1,3 @@
+Name = Diana Wangui
+ID =  343234
+Salary = 32
