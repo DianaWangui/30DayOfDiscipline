@@ -1,5 +1,6 @@
 import csv
 def writeDict():
+  """Openinf file to write in dictionary format"""
   with open('dict.csv', 'w') as f:
     fieldname = ['Name', 'dept', 'birth_month']
     writer = csv.DictWriter(f, fieldnames=fieldname)
