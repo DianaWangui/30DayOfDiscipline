@@ -4,7 +4,7 @@ def dictreader():
   DictReader reads directly into a dictionary instead of reading
   directly into string like the reader() function
   """
-  with open('data.csv', 'r') as file:
+  with open('write.csv', 'r') as file:
     reader = csv.DictReader(file)
     line_count = 0 # for keeping track of read lines
 
@@ -18,7 +18,7 @@ def dictreader():
         line_count += 1
         
       """Printing the data in the spreadsheet of the above columns"""  
-      print(f'\t{row["Name"]} lives in {row["City"]} depatment and is {row["Age"]} years old.')
+      print(f'\t{row["F_name"]} {row["L_name"]} is {row["Rank"]}.')
       line_count += 1
 
     """Printing the number of lines processed in out program"""
