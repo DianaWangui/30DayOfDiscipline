@@ -1,81 +1,34 @@
 class University:
-    def __init__(self, uni_name, branch, faculty):
-        self.uniname = uni_name
-        self.branch = branch
-        self.faculty = faculty
-
-    @property
-    def uni_name(self):
-        return self.uniname
-
-    @uni_name.setter
-    def uni_name(self, name):
-        self.uniname = name
-
-    @property
-    def branch_name(self):
-        return self.branch
-
-    @branch_name.setter
-    def branch_name(self, branch):
-        self.branch = branch
-
-    def university_name(self):
-        print(f"Your university name is {self.uniname}")
-
-    def branch_name(self):
-        print(f"Your branch is {self.branch}")
-
-    def faculty_name(self):
-        print(f"Your faculty is {self.faculty}")
+    def __init__(self, uni_name):
+        self._uni_name = uni_name
 
 
-class Courses(University):
-    def __init__(self, c_name, uni_name, branch, faculty):
-        self.__cname = c_name
-        super().__init__(uni_name, branch, faculty)
-
-    def course_name(self):
-        print(f"Your course is {self.__cname}")
+class Course:
+    def __init__(self, uni, c_name):
+        self._uni = uni
+        self._c_name = c_name
 
 
-class Branch(University):
-    def __init__(self, b_name, uni_name, branch, faculty):
-        self.__bname = b_name
-        super().__init__(uni_name, branch, faculty)
-
-    def branch_name(self):
-        print(f"Your branch name is {self.__bname}")
+class Branch:
+    def __init__(self, uni, branch_name):
+        self._uni = uni
+        self._branch_name = branch_name
 
 
-class Student(Branch, Courses):
-    def __init__(self, s_name, reg_no, c_name, uni_name, branch, faculty):
-        self.__sname = s_name
-        self.__reg = reg_no
-        Branch.__init__(self, branch, uni_name, branch, faculty, faculty)
-        Courses.__init__(self, c_name, uni_name, branch, faculty, faculty)
+class Student:
+    def __init__(self, uni_name, c_name, branch_name, s_name, reg_no):
+        self._uni = University(uni_name)
+        self._course = Course(self._uni, c_name)
+        self._branch = Branch(self._uni, branch_name)
+        self._sname = s_name
+        self._reg = reg_no
 
-    def student_name(self):
-        print(f"Your name is {self.__sname}")
-
-    def reg_number(self):
-        print(f"Your registration no is {self.__reg}")
+    def student_details(self):
+        print(f"Name: {self._sname}, Reg_no: {self._reg}, Branch: {self._branch._branch_name}, Course: {self._course._c_name}")
 
 
-class Faculty(Branch):
-    def __init__(self, f_name, b_name, uni_name, branch, faculty):
-        self.__fname = f_name
-        super().__init__(b_name, uni_name, branch, faculty)
+# Instantiate Student
+student = Student("MKU", "CS", "Mombasa", "Diana", 123)
 
-    def faculty_name(self):
-        print(f"Your faculty is {self.__fname}")
-
-
-# Example usage
-student = Student("Diana", 234, "Cs", "MKU", "Mombasa")
-student.university_name()
-student.branch_name()
-student.faculty_name()
-student.course_name()
-student.student_name()
-student.reg_number()
+# Access student details
+student.student_details()
