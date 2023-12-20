@@ -15,21 +15,22 @@ class Course(University):
     self._course_name = course_name
 
 
-"""A class that prints the univeruty branch""" 
+"""A class that prints the university branch name
+inheriting from University name""" 
 class Branch(University):
   def __init__(self, uni_name, branch_name):
     super().__init__(uni_name)
     self._branch_name = branch_name
 
 
-class Student(Branch, Course):
-  def __init__(self,uni_name, course_name, student_name, reg_no,):
-    super().__init__(uni_name, course_name)
+class Student(Course, Branch):
+  def __init__(self,uni_name, course_name, branch_name, student_name, reg_no,):
+    super().__init__(uni_name, course_name, branch_name)
     self._studentname = student_name
     self._reg = reg_no
 
   def student_details(self):
     print(f"Name: {self._studentname}, Reg_no: {self._reg}")
 
-Std = Student("CS", "Mombasa", "Diana",123 )
+Std = Student("MKU", "CS", "Mombasa", "Diana",123 )
 print(Student.__mro__)
