@@ -8,16 +8,16 @@ class University:
 
 class Branch(University):
   def __init__(self, uni_name, branch_name):
-    super().__init__(uni_name)
-    self._branch = branch_name
+    University.__init__(self, uni_name)
+    self._branch_name = branch_name
 
   def get_branch_name(self):
-    return self._branch
+    return self._branch_name
   
 
 class Faculty(Branch):
-  def __init__(self, branch_name, faculty_name):
-    Branch.__init__(branch_name)
+  def __init__(self, uni_name, branch_name, faculty_name):
+    Branch.__init__(self, uni_name, branch_name)
     self._faculty_name = faculty_name
 
   def get_faculty_name(self):
@@ -26,7 +26,7 @@ class Faculty(Branch):
 
 class Course(Faculty):
   def __init__(self, uni_name, faculty_name, branch_name, course_name):
-    Faculty.__init__(uni_name, faculty_name, branch_name)
+    Faculty.__init__(self, uni_name, branch_name, faculty_name)
     self._course_name = course_name
 
   def get_course_name(self):
@@ -35,13 +35,13 @@ class Course(Faculty):
 
 class Student(Course):
   def __init__(self, uni_name, faculty_name, branch_name, course_name, student_id, student_name):
-    Course.__init__(uni_name, faculty_name, branch_name, course_name)
+    Course.__init__(self, uni_name, faculty_name, branch_name, course_name)
     self._student_id = student_id
     self._student_name = student_name
 
-  def display_student_info(self):
-    return self.display_student_name() + " " + str(self.display_student_id())
+  def display_student_id(self):
+    print(f"University: {self._uni_name}\nFaculty: {self._faculty_name}\nBranch: {self._branch_name}\nCourse: {self._course_name}\nStudent Id: {self._student_id}\nStudent Name: {self._student_name}")
   
 # Testing  
-student = Student("MKU", "IT", "Mombasa", "CS", "123", "Diana")
-print(student.display_student_info)
+student = Student("Mount Kenya University", "Computer Informatics", "Mombasa", "Computer Science", 123456, "Diana Wangui")
+student.display_student_id()
