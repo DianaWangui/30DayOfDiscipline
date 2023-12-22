@@ -45,4 +45,6 @@ To run the script, execute it as a standalone program. The user will be prompted
 
 I created another file that works the same as the above but very basic
 I used it to understand the basics of the game.
+Here (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/quiz_game.py)
+
 The game can accomodate other questions, I only used two questions when I implemented this
