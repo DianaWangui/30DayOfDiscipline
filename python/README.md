@@ -6,7 +6,7 @@ I will use this repo to code and learn daily for 30 days and document things I h
 .
 .
 
-# Day 1 - Quiz Game (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/Quiz_game_class.py)
+Quiz Game (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/Quiz_game_class.py)
 
 # Quiz Game with Classes
 
