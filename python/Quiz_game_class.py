@@ -40,6 +40,7 @@ class Score:
         print(f"Your score is {(self.score / len(self.quiz.questions)) * 100}%")
 
 if __name__ == "__main__":
+    print("\n")
     print("*" * 45)
     print("Welcome to Diana's Quiz Game:")
     print("*" * 45)
