@@ -40,3 +40,9 @@ The script starts by printing a welcome message and creating instances of the `Q
 ## Usage
 
 To run the script, execute it as a standalone program. The user will be prompted to answer each quiz question, and the final score will be displayed at the end.
+
+## Others
+
+I created another file that works the same as the above but very basic
+I used it to understand the basics of the game.
+The game can accomodate other questions, I only used two questions when I implemented this
