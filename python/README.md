@@ -48,3 +48,36 @@ I used it to understand the basics of the game.
 Here (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/quiz_game.py)
 
 The game can accomodate other questions, I only used two questions when I implemented this
+
+# University Simple Project Using Abstraction
+
+This Python project demonstrates the concept of abstraction in object-oriented programming using abstract classes and
+methods. The code models entities in a university, such as courses, branches, and students, showcasing the organization and structure provided by abstraction.
+
+## Abstraction in Object-Oriented Programming
+
+Abstraction is a key principle in object-oriented programming that involves simplifying complex systems by modeling classes based on essential features and hiding unnecessary details. In Python, abstraction is often implemented using abstract classes and methods.
+
+## Code Structure
+
+The code consists of the following components:
+
+### `University` (Abstract Base Class)
+
+- Represents a university with an abstract method `get_uni_name()`.
+
+### `Course` and `Branch` (Concrete Classes)
+
+- Concrete classes representing a university course and branch, respectively.
+- Inherit from the abstract class `University` and implement the abstract method.
+- Introduce additional methods (`get_course_name()` and `get_branch_name()`).
+
+### `Student` (Concrete Class with Multiple Inheritance)
+
+- Represents a student enrolled in a course and branch.
+- Inherits from both `Course` and `Branch`, demonstrating multiple inheritance.
+- Initializes attributes and introduces a method (`student_details()`) to print student details.
+
+## Usage Example
+
+Instantiate a `Student` object, providing information such as university name, course, branch, student name, and registration number. Call the `student_details()` method to print the student's details.
