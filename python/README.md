@@ -8,7 +8,9 @@ I will use this repo to code and learn daily for 30 days and document things I h
 
 Quiz Game (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/Quiz_game_class.py)
 
-# Quiz Game with Classes
+# PROJECT 1
+
+# Quiz Game with Classes (PROJECT 1)
 
 This Python script implements a simple quiz game using classes. The game consists of a set of questions with multiple-choice answers, and the player's score is calculated based on the correctness of their answers.
 
@@ -49,7 +51,9 @@ Here (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/quiz_gam
 
 The game can accomodate other questions, I only used two questions when I implemented this
 
-# University Simple Project Using Abstraction
+# PROJECT 2
+
+# University Simple Project Using Abstraction (PROJECT 2)
 
 This Python project demonstrates the concept of abstraction in object-oriented programming using abstract classes and
 methods. The code models entities in a university, such as courses, branches, and students, showcasing the organization and structure provided by abstraction.
@@ -81,3 +85,6 @@ The code consists of the following components:
 ## Usage Example
 
 Instantiate a `Student` object, providing information such as university name, course, branch, student name, and registration number. Call the `student_details()` method to print the student's details.
+
+project link(https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/university_abstraction.py)
+link 2(https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/main_abs.py)
