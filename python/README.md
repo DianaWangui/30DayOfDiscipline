@@ -88,3 +88,33 @@ Instantiate a `Student` object, providing information such as university name, c
 
 project link(https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/university_abstraction.py)
 link 2(https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/main_abs.py)
+
+# Project 3
+
+## Duck Typing and Polymorphism in Python
+
+This repository explores the concepts of Duck Typing and Polymorphism in Python through illustrative code examples. The main purpose is to showcase how Python's dynamic typing and object-oriented features allow for flexible and reusable code.
+
+## Duck Typing
+
+Duck typing is a principle in Python where the type or class of an object is determined by its behavior (methods and properties) rather than its explicit type. The provided examples demonstrate how different classes can share common behavior, allowing them to be used interchangeably.
+
+## Operator Overloading
+
+Python supports operator overloading, enabling the same operator to behave differently based on the operands involved. The code includes an example of operator overloading using the `Complex` class to illustrate the customization of the `+` operator for complex numbers.
+
+## Polymorphism
+
+Polymorphism is a fundamental concept in object-oriented programming that allows objects of different types to be treated as objects of a common type. The code showcases polymorphism through method overloading and overriding, emphasizing the flexibility and adaptability of Python's object-oriented paradigm.
+
+### Method Overloading
+
+Method overloading is demonstrated using the `Override` class, which provides multiple implementations of a method, either by accepting a different number of arguments or using default values.
+
+### Method Overriding
+
+Method overriding is showcased with the `Person` class, where a subclass provides a specific implementation for a method that is already defined in its superclass. This enhances the customization and extensibility of class behavior.
+
+## Conclusion
+
+Understanding duck typing and polymorphism in Python is crucial for writing modular, adaptable, and maintainable code. These concepts empower developers to create code that can seamlessly work with diverse types of objects, promoting code reuse and making the development process more efficient. This repository serves as a resource for learning and exploring these concepts in the context of Python programming.
