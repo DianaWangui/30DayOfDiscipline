@@ -1,11 +1,14 @@
+# This method overloading is not allowed in python
+# I used this just for learning purposes
+
 class Override:
-  #using default argument
+  #avoid overlaoding by using default argument
   def add(self, a, b, c=0):
     return a + b + c
 
 
 class Demo:
-  # using *arg to take any args passed
+  # avoid overloading by using *arg to take any args passed
   def sum(self, *args):
     total = 0
     for i in args:
