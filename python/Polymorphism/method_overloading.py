@@ -2,7 +2,7 @@
 # I used this just for learning purposes
 
 class Override:
-  #avoid overlaoding by using default argument
+  #avoid overlaoding by using default arguments
   def add(self, a, b, c=0):
     return a + b + c
 
