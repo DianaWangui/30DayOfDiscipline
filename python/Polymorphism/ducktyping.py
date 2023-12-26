@@ -1,3 +1,5 @@
+# Duck typing in python
+
 class Duck:
   def swim(self):
     print("I can swim")
