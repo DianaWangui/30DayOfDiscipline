@@ -16,7 +16,8 @@ class BankAccount:
 
   def __str__(self):
     return f"Bank Account of {self.holder_name} with initial balance {self.balance}\n"
-  
+
+# testing our methods 
 obj = BankAccount("Diana", 200)
 print(obj)
 obj.deposit(500)
