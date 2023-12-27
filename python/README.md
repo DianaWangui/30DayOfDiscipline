@@ -116,3 +116,48 @@ Method overloading is demonstrated using the `Override` class, which provides mu
 Method overriding is showcased with the `Person` class, where a subclass provides a specific implementation for a method that is already defined in its superclass. This enhances the customization and extensibility of class behavior.
 
 Link (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/Polymorphism/method_overloading.py)
+
+# Project 4
+
+# Turtle Graphics Shapes
+
+This Python script uses the Turtle graphics library to draw various shapes and fill them with different colors. Each shape is drawn centered on the screen, and the script ensures that each shape fills only its own area without overlapping colors with previously drawn shapes.
+
+## Shapes Drawn
+
+1. **Octagon:**
+
+   - Size: 100 units
+   - Angle: 45 degrees
+   - Fill Color: Pink (border), Blue (fill)
+
+2. **Heptagon:**
+
+   - Size: 100 units
+   - Angle: 51.43 degrees
+   - Fill Color: Orange (border), Violet (fill)
+
+3. **Hexagon:**
+
+   - Size: 100 units
+   - Angle: 60 degrees
+   - Fill Color: Yellow (border), Pink (fill)
+
+4. **Pentagon:**
+
+   - Size: 100 units
+   - Angle: 72 degrees
+   - Fill Color: Black (border), Purple (fill)
+
+5. **Square:**
+
+   - Size: 100 units
+   - Angle: 90 degrees
+   - Fill Color: Yellow (border), Blue (fill)
+
+6. **Triangle:**
+   - Size: 100 units
+   - Angle: 120 degrees
+   - Fill Color: Red (border), Green (fill)
+
+File here (https://github.com/DianaWangui/30DayOfDiscipline/blob/main/python/Turtle-Project/main1.py)
