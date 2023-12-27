@@ -24,8 +24,12 @@ class BankAccount:
       print(f"You have withdrawn {self.withdraw}.")
       print(f"Your new balance is {self.balance}\n")
 
+  def __str__(self):
+    return f"Bank Account of {self.holder_name} with initial balance {self.balance}"
+
 # testing by calling the methods
 b = BankAccount("Diana", 200)
 b.withdraw(500)
 b.deposit(1000)
-b.balance
+#printed by calling __str__ inside the class BankAccount
+print(b)
