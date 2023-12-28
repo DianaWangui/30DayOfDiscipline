@@ -1,0 +1,28 @@
+1. Add a task
+2. Mark task as completed
+3. View to-do list
+4. Remove a task
+5. Exit
+
+Choose an option (1/2/3/4/5): 1
+Enter task: Buy groceries
+
+Choose an option (1/2/3/4/5): 3
+To-Do List:
+1. [ ] Buy groceries
+
+Choose an option (1/2/3/4/5): 2
+Enter task number to mark as completed: 1
+
+Choose an option (1/2/3/4/5): 3
+To-Do List:
+1. [x] Buy groceries
+
+Choose an option (1/2/3/4/5): 4
+Enter task number to remove: 1
+
+Choose an option (1/2/3/4/5): 3
+To-Do List:
+(empty)
+
+Choose an option (1/2/3/4/5): 5
