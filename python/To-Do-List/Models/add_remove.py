@@ -22,7 +22,7 @@ class Manage:
             add_new = input("Would you like to add new task?(yes or no)")
             if (add_new.lower() != "yes"):
               break
-        else:
+        elif selected_list.lower() == "work":
           while(True):
             print("WORK LIST")
             add = input("Enter task for work list: ")
@@ -30,7 +30,10 @@ class Manage:
             add_new = input("Would you like to add new task?(yes or no)")
             if (add_new.lower() != "yes"):
               break
+        else:
+          print(f"[{selected_list}] list not found! Enter a valid list")
       else:
+        print("Okey bye!")
         break
 
   # This is the method to remove tasks from any of the To Do lists handling all edge cases
@@ -71,8 +74,11 @@ class Manage:
               break
             except (ValueError, IndexError):
               print("Please enter a valid task number.")
-      print("\nOkey bye!")
-      break
+        else:
+          print(f"[{selected_list}] list not found. Enter a valid list")
+      else:
+        print("Okey bye!")
+        break
 
     
 # testing
