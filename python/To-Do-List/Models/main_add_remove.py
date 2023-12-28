@@ -25,29 +25,13 @@ class Manage:
             return False
         
     def mark_as_done(self, task, category):
-        if category.lower() == "personal":
-            for task in category:
-                if task == task:
-                    return True
-                else:
-                    return False
-        elif category.lower() == "work":
-            for task in category:
-                if task == task:
-                    return True
-                else:
-                    return False
+        tasks_list = self.personal if category.lower() == "personal" else self.work
+        for index, t in enumerate(tasks_list):
+            if t == task:
+                tasks_list[index] = f"{t} (Done)"
+                return True
+        return False
             
-    def display(self,category):
-        if category.lower() == "personal":
-            for task in self.personal:
-                print(task)
-                return True
-            else:
-                return False
-        elif category.lower() == "work":
-            for task in self.work:
-                print(task)
-                return True
-            else:
-                return False
+    def display(self, category):
+        tasks_list = self.personal if category.lower() == "personal" else self.work
+        return tasks_list
