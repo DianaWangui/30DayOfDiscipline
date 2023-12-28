@@ -16,6 +16,8 @@ class TestClass:
         category = "personal"
         assert self.manager.remove_from_list(task, category), f"Removal of {task} from {category} failed"
         return True
+    def test_display(self):
+        assert self.manager.display(category= "personal"), f"Error displaying tasks."
 
 tc = TestClass()
 print("Running tests...")
@@ -31,3 +33,9 @@ try:
     print("\tTest Remove passed")
 except AssertionError as e:
     print("\tTest Remove Failed with error:", str(e))
+try:
+    tc.test_display()
+    print("\tTest Display passed")
+except Exception as e:
+    raise RuntimeError(f"\n\tTest Display Failed with error:\n{str(e)}")
+
