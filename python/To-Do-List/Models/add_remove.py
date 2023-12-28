@@ -1,4 +1,4 @@
-"""This class will manage the To Do List with adding and removing
+"""This class will manage the To Do List by adding and removing
 items from the list."""
 
 class Manage:
