@@ -24,21 +24,19 @@ class Manage:
         else:
             return False
         
-    def mark_as_done(self, task, category,task_no):
+    def mark_as_done(self, task, category):
         if category.lower() == "personal":
             for task in category:
-                if task_no == task_no:
-                    task.done = True
-                return True
-            else:
-                return False
+                if task == task:
+                    return True
+                else:
+                    return False
         elif category.lower() == "work":
             for task in category:
-                if task_no == task_no:
-                    task.done = True
-                return True
-            else:
-                return False
+                if task == task:
+                    return True
+                else:
+                    return False
             
     def display(self,category):
         if category.lower() == "personal":
