@@ -11,13 +11,18 @@ root.resizable(False, False)
 task_list = []
 
 def openTaskFile():
-  with open("tasklist.txt", "r", encoding="utf-8") as taskfile:
-    tasks = taskfile.readlines()
+  try:
+    global task_list
+    with open("tasklist.txt", "r", encoding="utf-8") as taskfile:
+      tasks = taskfile.readlines()
 
-  for task in tasks:
-    if task != '\n':
-      task_list.append(task)
-      listbox.insert(END, task)
+    for task in tasks:
+      if task != '\n':
+        task_list.append(task)
+        listbox.insert(END, task)
+  except:
+    file = open("tasklist.txt", "w", encoding="utf-8")
+    file.close()
 
 # Image_icon = PhotoImage(file="C:\\Users\\GAMER\\Desktop\\Image\\delete.png")
 # root.iconphoto(False, Image_icon)
