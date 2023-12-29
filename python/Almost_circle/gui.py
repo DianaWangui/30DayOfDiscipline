@@ -16,7 +16,7 @@ def addTask():
 
   if task:
     with open("tasklist.txt", "a", encoding="utf-8") as taskfile:
-      taskfile.writ(f"\n{task}")
+      taskfile.write(f"\n{task}")
       task_list.append(task)
       listbox.insert(END, task)
 
@@ -54,7 +54,7 @@ task_entry=Entry(frame, width=18, font="arial 20", bd=0)
 task_entry.place(x=10, y=7)
 task_entry.focus()
 
-button=Button(frame, text="ADD", font="arial 20 bold", width=6, bg="#5a95ff", fg="#fff", bd=0)
+button=Button(frame, text="ADD", font="arial 20 bold", width=6, bg="#5a95ff", fg="#fff", bd=0, command=addTask)
 button.place(x=300, y=0)
 
 
