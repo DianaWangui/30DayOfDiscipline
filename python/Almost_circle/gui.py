@@ -42,6 +42,18 @@ listbox.pack(side=LEFT , fill=BOTH, padx=2)
 scrollbar= Scrollbar(frame1)
 scrollbar.pack(side=RIGHT, fill=BOTH)
 
+
 listbox.config(yscrollcommand=scrollbar.set)
 scrollbar.config(command=listbox.yview)
+
+#delete
+Delete_icon= Button(root, text="Remove Task", font="arial 14 bold", bg="#5a95ff", fg="#fff", bd=0)
+Delete_icon.pack(pady=10)
+
+
+
+
+
+
+
 root.mainloop()
