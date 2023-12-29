@@ -1,50 +1,37 @@
-"""
-a square class that defines a square
-And a Public instance method: def area(self):
-that returns the current square area
-Methods Getter and Setter properties for size.
-property def size(self): to retrieve it
-property setter def size(self, value): to set it:
-"""
+class Task:
+    def __init__(self, name):
+        self.name = name
+        self.done = False
 
+class Manage:
+    def __init__(self, tasks=[]):
+        self.tasks = tasks
 
-class Square:
-    """
-    instantiation of the attributes of the methods
-    Raising errors if coditons are not met
-    """
+    def add_task(self, task_name):
+        task = Task(task_name)
+        self.tasks.append(task)
 
-    def __init__(self, size=0):
-        self.__size = size
+    def mark_as_done(self, task_name):
+        for task in self.tasks:
+            if task.name == task_name:
+                task.done = True
+                print(f'Task "{task_name}" marked as done.')
+                return
+        print(f'Task "{task_name}" not found.')
 
-    @property
-    def size(self):
-        return self.__size
+    def display_tasks(self):
+        for task in self.tasks:
+            status = "Done" if task.done else "Not Done"
+            print(f'Task: {task.name} - Status: {status}')
 
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("Size must be an integer")
-        if value < 0:
-            raise ValueError("Size must be >= 0")
+# Example usage:
+manager = Manage()
+manager.add_task("Task 1")
+manager.add_task("Task 2")
+manager.display_tasks()
 
-        self.__size = value
+# Mark Task 1 as done
+manager.mark_as_done("Task 1")
 
-    def area(self):
-        """
-        Calculates area of square
-        Returns: area
-        """
-        return (self.__size ** 2)
-my_square = Square(89)
-print("Area: {} for size: {}".format(my_square.area(), my_square.size))
-
-my_square.size = 3
-print("Area: {} for size: {}".format(my_square.area(), my_square.size))
-
-try:
-    my_square.size = "5 feet"
-    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
-except Exception as e:
-    print(e)
-
+# Display tasks after marking as done
+manager.display_tasks()
