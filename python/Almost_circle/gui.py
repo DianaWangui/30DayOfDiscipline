@@ -10,6 +10,15 @@ root.resizable(False, False)
 
 task_list = []
 
+def openTaskFile():
+  with open("tasklist.txt", "r", encoding="utf-8") as taskfile:
+    tasks = taskfile.readlines()
+
+  for task in tasks:
+    if task != '\n':
+      task_list.append(task)
+      listbox.insert(END, task)
+
 # Image_icon = PhotoImage(file="C:\\Users\\GAMER\\Desktop\\Image\\delete.png")
 # root.iconphoto(False, Image_icon)
 
@@ -49,6 +58,8 @@ scrollbar.config(command=listbox.yview)
 #delete
 Delete_icon= Button(root, text="Remove Task", font="arial 13 bold", bg="#5a95ff", fg="#fff", bd=0)
 Delete_icon.pack(pady=10)
+
+
 
 
 
