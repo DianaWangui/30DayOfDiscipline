@@ -46,14 +46,8 @@ def openTaskFile():
     file = open("tasklist.txt", "w", encoding="utf-8")
     file.close()
 
-# Image_icon = PhotoImage(file="C:\\Users\\GAMER\\Desktop\\Image\\delete.png")
-# root.iconphoto(False, Image_icon)
-
-# TopImage=PhotoImage(file="C:\\Users\\GAMER\\Desktop\\Image\\delete.png")
-# Label(root, image=TopImage).pack()
-
-heading=Label(root, text="ALL TASK", font="arial 20 bold", fg="white", bg="#32405b")
-heading.place(x=130, y=20)
+heading=Label(root, text="ALL TASKS", font="arial 20 bold", width=30, fg="white", bg="#32405b")
+heading.pack()
 
 
 #Main
