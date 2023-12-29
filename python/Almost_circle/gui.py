@@ -20,7 +20,16 @@ def addTask():
       task_list.append(task)
       listbox.insert(END, task)
 
-def deleteTask()
+def deleteTask():
+  global task_list
+  task = str(listbox.get(ANCHOR))
+  if task in task_list:
+    task_list.remove(task)
+    with open("tasklist.txt", "w", encoding="utf-8") as taskfile:
+      for task in task_list:
+        taskfile.write(task + '\n')
+    listbox.delete(ANCHOR)
+
 
 
 def openTaskFile():
