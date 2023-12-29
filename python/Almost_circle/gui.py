@@ -20,6 +20,8 @@ def addTask():
       task_list.append(task)
       listbox.insert(END, task)
 
+def deleteTask()
+
 
 def openTaskFile():
   try:
@@ -73,7 +75,7 @@ scrollbar.config(command=listbox.yview)
 
 openTaskFile()
 #delete
-Delete_icon= Button(root, text="Remove Task", font="arial 13 bold", bg="#5a95ff", fg="#fff", bd=0)
+Delete_icon= Button(root, text="Remove Task", font="arial 13 bold", bg="#5a95ff", fg="#fff", bd=0, command=deleteTask)
 Delete_icon.pack(pady=10)
 
 
