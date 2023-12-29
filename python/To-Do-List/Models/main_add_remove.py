@@ -6,10 +6,12 @@ class Manage:
 
     def add_to_list(self, task, category):
         if category.lower() == "personal":
-            self.personal.append(task)
+            with open("personal.txt", "a", encoding="utf-8") as file:
+                file.write(f"\n{task}")
             return True
         elif category.lower() == "work":
-            self.work.append(task)
+            with open("work.txt", "a", encoding="utf-8") as file:
+                file.write(f"{task}")
             return True
         else:
             return False
@@ -33,5 +35,19 @@ class Manage:
         return False
             
     def display(self, category):
-        tasks_list = self.personal if category.lower() == "personal" else self.work
-        return tasks_list
+        if category.lower() == "personal":
+            with open("personal.txt", "r", encoding="utf-8") as file:
+                file.seek(0)
+                personal_task = file.readlines()
+                for line in personal_task:
+                    print(line.strip())
+        elif category.lower() == "work":
+            with open("work.txt", "r", encoding="utf-8") as file:
+                file.seek(0)  # Set the pointer to start of the file
+                work_task = file.readlines()
+                for line in work_task:
+                    print(line.strip())
+
+            return self.work
+        else:
+            return None
